@@ -88,14 +88,14 @@ jude_woolls = Programmer(
 )
 
 # add each instance of our programmers to our session
-#session.add(ada_lovelace)
+# session.add(ada_lovelace)
 # session.add(alan_turing)
 # session.add(grace_hopper)
 # session.add(margaret_hamilton)
 # session.add(tim_berners_lee)
 # session.add(bill_gates)
 # session.add(jude_woolls)
-
+# session.commit()
 
 
 # updating a single record
@@ -134,11 +134,11 @@ jude_woolls = Programmer(
 # else:
 #     print("No records found")
 
-# deleting multiple records
-programmers = session.query(Programmer)
-for programmer in programmers:
-    session.delete(programmer)
-    session.commit()
+# # deleting multiple records
+# programmers = session.query(Programmer)
+# for programmer in programmers:
+#     session.delete(programmer)
+#     session.commit()
 
 
 # Query to check if ada was added
