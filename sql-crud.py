@@ -79,6 +79,14 @@ tim_berners_lee = Programmer(
     famous_for="World Wide Web"
 )
 
+jude_woolls = Programmer(
+    first_name="Jude",
+    last_name="Woolls",
+    gender="M",
+    nationality='British',
+    famous_for="Retiring Early"
+)
+
 # add each instance of our programmers to our session
 #session.add(ada_lovelace)
 # session.add(alan_turing)
@@ -86,10 +94,27 @@ tim_berners_lee = Programmer(
 # session.add(margaret_hamilton)
 # session.add(tim_berners_lee)
 # session.add(bill_gates)
+# session.add(jude_woolls)
 
-# #commit our session to the database
+
+
+# updating a single record
+# programmer = session.query(Programmer).filter_by(id=8).first()
+# programmer.famous_for = "World President"
+
+#commit our session to the database
 # session.commit()
 
+# updating multiple records
+people = session.query(Programmer)
+for person in people:
+    if person.gender == "F":
+        person.gender = "Female"
+    elif person.gender == "M":
+        person.gender = "Male"
+    else:
+        print("Gender not defined")
+    session.commit()
 
 
 # Query to check if ada was added
